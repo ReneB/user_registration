@@ -1,0 +1,8 @@
+dependencies:
+  post:
+    - bundle exec rake secret > config/secret_token
+    - bundle exec thor i18n:build_json
+test:
+  override:
+    - bundle exec rspec --options .rspec
+    - bundle exec rspec --options .rspec-features
