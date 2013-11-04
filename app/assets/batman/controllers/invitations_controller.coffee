@@ -16,7 +16,6 @@ class UserRegistration.InvitationsController extends UserRegistration.Applicatio
   showInvitationFeedBack: ->
     @set('showInvitationFeedback', true)
     observer =  (newValue) =>
-      console.log "observer is working"
       if newValue
         @set('showInvitationFeedback', false)
         @invitation.forget "recipient_name", observer
