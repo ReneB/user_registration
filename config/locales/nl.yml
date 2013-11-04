@@ -24,8 +24,8 @@ nl:
     form:
       submit: Aanmelden
       placeholders:
-        name: Uw naam
-        email: Uw email
+        name: Je naam
+        email: Je email
 
   invitation:
     inviter_name: Naam afzender
