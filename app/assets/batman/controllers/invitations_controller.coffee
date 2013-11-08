@@ -4,25 +4,15 @@ class UserRegistration.InvitationsController extends UserRegistration.Applicatio
   constructor: ->
     super
     @setInvitation()
-    @set('showInvitationFeedback', false)
+    @set('InvitationWasSend', false)
 
   create: (params) ->
     @invitation.save( (ErrorSet, Invitation) =>
       if (ErrorSet is undefined)
-        @setInvitation Invitation.get('inviter_name')
-        @showInvitationFeedBack()
+        @setInvitation(Invitation.get('inviter_name'))
+        @fire('ModelSavedOnServer', Invitation)
+        @set('InvitationWasSend', true)
     )
-
-  showInvitationFeedBack: ->
-    @set('showInvitationFeedback', true)
-
-    observer = (newValue) =>
-      if newValue
-        @set('showInvitationFeedback', false)
-        @invitation.forget "recipient_name", observer
-        @invitation.forget "recipient_email", observer
-    @invitation.observe "recipient_name", observer
-    @invitation.observe "recipient_email", observer
 
   setInvitation: (inviter_name) ->
     @set('invitation', new UserRegistration.Invitation)

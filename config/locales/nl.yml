@@ -11,7 +11,7 @@ nl:
     invitation:
       title: Nodig een collega uit
       subtitle: De Coconut App komt eraan!
-      feedback: Dank je wel! We hebben meteen een mail naar je collega gestuurd
+      feedback: Dank je wel! We hebben meteen een mail naar %{colleague} gestuurd
 
   user:
     name: naam
