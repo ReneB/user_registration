@@ -1,6 +1,7 @@
 require "capybara_spec_helper"
 
-feature "Inviting multiple colleagues to the Coconut App", js: true do
+feature "Inviting (multiple) colleagues to the Coconut App", js: true do
+
   scenario "Inviting with an invalid e-mail address is not allowed" do
     expected_error = I18n.t('invitation.recipient_email') + " " + I18n.t('errors.messages.not_matching')
 
@@ -47,7 +48,7 @@ feature "Inviting multiple colleagues to the Coconut App", js: true do
   end
 
   scenario "Inviting with valid information" do
-    expected_feedback = I18n.t('content.invite.feedback')
+    expected_feedback = I18n.t('content.invitation.feedback', colleague:'henk')
 
     visit "/"
 

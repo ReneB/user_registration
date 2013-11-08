@@ -7,16 +7,11 @@ nl:
       two: Lees het laatste nieuws
       three: Draag direct bij aan discussies
       four: Deel content vanaf je telefoon
-    colleagues:
+    feedback: Dank je wel! We hebben zojuist een bevestigingsmail naar je verzonden.
+    invitation:
       title: Nodig een collega uit
       subtitle: De Coconut App komt eraan!
-
-    feedback: Dank je wel! We hebben zojuist een bevestigingsmail naar je verzonden.
-
-    invite:
-      header: Nodig een collega uit
-      text: Help je collega met..
-      feedback: Dank je wel! We hebben meteen een mail naar je collega gestuurd.
+      feedback: Dank je wel! We hebben meteen een mail naar je collega gestuurd
 
   user:
     name: naam

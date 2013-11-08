@@ -15,13 +15,12 @@ class UserRegistration.InvitationsController extends UserRegistration.Applicatio
 
   showInvitationFeedBack: ->
     @set('showInvitationFeedback', true)
-    observer =  (newValue) =>
+
+    observer = (newValue) =>
       if newValue
         @set('showInvitationFeedback', false)
         @invitation.forget "recipient_name", observer
         @invitation.forget "recipient_email", observer
-
-
     @invitation.observe "recipient_name", observer
     @invitation.observe "recipient_email", observer
 
