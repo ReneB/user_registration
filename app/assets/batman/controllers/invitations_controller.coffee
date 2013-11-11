@@ -4,14 +4,12 @@ class UserRegistration.InvitationsController extends UserRegistration.Applicatio
   constructor: ->
     super
     @setInvitation()
-    @set('InvitationWasSend', false)
 
   create: (params) ->
     @invitation.save( (ErrorSet, Invitation) =>
       if (ErrorSet is undefined)
         @setInvitation(Invitation.get('inviter_name'))
         @fire('ModelSavedOnServer', Invitation)
-        @set('InvitationWasSend', true)
     )
 
   setInvitation: (inviter_name) ->
