@@ -7,11 +7,12 @@ nl:
       two: Lees het laatste nieuws
       three: Draag direct bij aan discussies
       four: Deel content vanaf je telefoon
-    feedback: Dank je wel! We hebben zojuist een bevestigingsmail naar je verzonden.
+    feedback: Dank je wel! We hebben zojuist een bevestigingsmail naar je verzonden. Je kunt ook <a href=%{href}>%{invitelink}</a>!
+    invite-link: je collega's uitnodigen
     invitation:
-      title: Nodig een collega uit
+      title: Nodig collega's uit
       subtitle: De Coconut App komt eraan!
-      feedback: Dank je wel! We hebben meteen een mail naar %{colleague} gestuurd
+      feedback: Dank je wel! We hebben meteen een mail naar %{colleague} gestuurd.
 
   user:
     name: naam

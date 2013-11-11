@@ -28,8 +28,8 @@ feature "Registering for the Coconut App", js: true do
     expect(page).to have_content(expected_error)
   end
 
-  scenario "Registering with valid information" do
-    expected_feedback = I18n.t('content.feedback')
+  scenario "Registering with valid information show link to colleague invitation" do
+    expected_feedback = I18n.translate('content.invite-link')
 
     visit "/"
 
@@ -39,6 +39,6 @@ feature "Registering for the Coconut App", js: true do
 
     click_button I18n.t('user.form.submit')
 
-    expect(page).to have_content(expected_feedback)
+    page.has_link?(expected_feedback)
   end
 end

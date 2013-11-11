@@ -4,7 +4,8 @@ feature "Spam protection", js: true do
   include Capybara::DSL
 
   scenario "Registering with valid information" do
-    expected_feedback = I18n.t('content.feedback')
+    ##expected_feedback = I18n.t('content.feedback')
+    expected_feedback = I18n.translate('content.invite-link')
 
     visit "/"
 
@@ -15,12 +16,14 @@ feature "Spam protection", js: true do
     expect {
       click_button I18n.t('user.form.submit')
 
-      expect(page).to have_content(expected_feedback)
+      ##expect(page).to have_content(expected_feedback)
+      page.has_link?(expected_feedback)
     }.to change { User.count }.by(1)
   end
 
   scenario "Attempting to use the form for spam does not work" do
-    expected_feedback = I18n.t('content.feedback')
+    ##expected_feedback = I18n.t('content.feedback')
+    expected_feedback = I18n.translate('content.invite-link')
 
     visit "/"
 
@@ -40,7 +43,8 @@ feature "Spam protection", js: true do
       click_button I18n.t('user.form.submit')
 
       # IMPORTANT: we want the app to fake a success
-      expect(page).to have_content(expected_feedback)
+      ##expect(page).to have_content(expected_feedback)
+      page.has_link?(expected_feedback)
     }.not_to change { User.count }
   end
 end

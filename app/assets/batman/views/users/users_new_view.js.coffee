@@ -1,5 +1,9 @@
 class UserRegistration.UsersNewView extends Batman.View
   viewDidAppear: ->
+    @set(
+      'registrationFeedback',
+      Batman.I18N.translate('content.feedback', href: '#invite-colleagues', invitelink: Batman.I18N.translate('content.invite-link'))
+    )
     # Your node is in the DOM and ready to accept instructions (aka jQuery)
 
   # buttonWasClicked: (node, event, view) ->
