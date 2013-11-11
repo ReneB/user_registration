@@ -9,13 +9,13 @@ class UserRegistration.InvitationsNewView extends Batman.View
         'invitationFeedback',
         Batman.I18N.translate('content.invitation.feedback', colleague: invitation.get('recipient_name'))
       )
-      @invitation().observe("recipient_name", ClearElementsCallback)
-      @invitation().observe("recipient_email", ClearElementsCallback)
+      @invitation().observe("recipient_name", ClearInputElementsCallback)
+      @invitation().observe("recipient_email", ClearInputElementsCallback)
 
-    ClearElementsCallback = (newValue, oldValue) =>
+    ClearInputElementsCallback = (newValue, oldValue) =>
       @set('invitationFeedback', '')
-      @invitation().forget "recipient_name", ClearElementsCallback
-      @invitation().forget "recipient_email", ClearElementsCallback
+      @invitation().forget "recipient_name", ClearInputElementsCallback
+      @invitation().forget "recipient_email", ClearInputElementsCallback
 
   invitation: ->
     @get('controller').get('invitation')
