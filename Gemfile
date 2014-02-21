@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '>= 4.0.0'
 gem 'sprockets-rails'
 
-gem 'rails-api', :git => 'https://github.com/rails-api/rails-api.git', :branch => 'master'
+gem 'rails-api'
 
 gem 'mysql2'
 gem 'puma'
